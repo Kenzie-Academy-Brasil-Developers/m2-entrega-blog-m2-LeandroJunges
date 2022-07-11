@@ -15,7 +15,7 @@ const login = await LoginRequest.login(
  
   console.log(cadastrarUsuario)
   console.log(login)
-  const post = await PostRequest.viewPosts(15)
+  const post = await PostRequest.viewPosts(1)
   console.log(post)
 
   const renderizarPosts = Post.renderizaPost()

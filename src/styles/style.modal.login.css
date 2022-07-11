@@ -72,3 +72,14 @@
     background-color: #EDBC64;
     color: #FFFFFF;
 }
+.texto-login{
+    text-align: center;
+    color: #FFFFFF;
+}
+.texto-login strong{
+    font-family: 'Montserrat';
+    font-weight: 900;
+    color: #F8E7E7;
+    text-decoration: none;
+    cursor: pointer;
+}

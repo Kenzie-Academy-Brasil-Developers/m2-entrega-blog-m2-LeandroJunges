@@ -124,9 +124,8 @@
     static btnAdicionar = document.querySelector(".add")
     static base_url = 'https://blog-m2.herokuapp.com'
     static token = JSON.parse(localStorage.getItem("@kenzie-blog:token"))
-        // static usuarioLogado = localStorage.getItem("@kenzie-user")
+
     static async infosUsuario() {
-        console.log(this.token)
         const id = localStorage.getItem("@kenzie-user")
         const dados = await fetch(`https://blog-m2.herokuapp.com/users/${id}`, {
                 method: "GET",
@@ -157,27 +156,21 @@
         const postagem = {
             content: texto
         }
-        return postagem
+        return JSON.stringify(postagem)
     }
     static async adicionarPost() {
         console.log("teste")
         const postagem = this.criarPost()
-        const post = await fetch(this.base_url + "/post", {
+        return  await fetch(this.base_url + "/post", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     "Authorization": `Bearer ${this.token}`
                 },
-                body: JSON.stringify(postagem)
+                body: postagem
             })
             .then((res) => res.json())
-            .then(res => {
-                console.log(res)
-                return res
-                    // confirmar se deu certo
-            })
             .catch(err => console.log(err))
-        return post
     }
     static async pegarPost(id) {
         const postagens = await fetch(this.base_url + "/posts?page=" + id, {
@@ -189,14 +182,11 @@
             })
             .then((res) => res.json())
             .catch(err => console.log(err))
-        console.log(postagens)
         return postagens
     }
     static async renderizaPost() {
         const postagens = await this.pegarPost()
         const listagemPost = postagens.data
-        console.log(listagemPost)
-        console.log(listagemPost[0])
         
         listagemPost.forEach((element) => {
             const listaPost = document.querySelector(".container-posts")
@@ -216,7 +206,7 @@
             const divTextPost = document.createElement("div")
             divTextPost.classList.add("container-content")
             const nomePerfil = document.createElement("h2")
-            nomePerfil.innerText = element.username
+            nomePerfil.innerText = element.user.username
             const textoPost = document.createElement("p")
             textoPost.innerText = element.content
             
@@ -247,3 +237,11 @@
 Post.renderizaPost()
 Post.renderizaPerfil()
 Post.btnAdicionar.addEventListener("click", Post.adicionarPost())
+
+const buttonLogout = document.querySelector(".button-logout")
+buttonLogout.addEventListener('click', (event)=>{
+    console.log(event.target)
+    window.location.href = "../../src/index.html"
+    localStorage.clear()
+
+})

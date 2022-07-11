@@ -80,6 +80,13 @@ export default class Cadastro {
             })
             .then(res => res.json())
             .catch(err => console.log(err))
+            if(dadosLogin.message !== undefined){
+                alert("Usuário invalido ou ja cadastrado!")
+                
+        }else{
+            window.location.href = "../index.html"
+            
+        }
         return dadosLogin
     }
 }
@@ -90,4 +97,9 @@ export default class Cadastro {
 Cadastro.btnCadastrar.addEventListener("click", (e) => {
     e.preventDefault()
     Cadastro.createUser()
+})
+const btnCloseCadastrar = document.querySelector(".btn-close-cadastro")
+
+btnCloseCadastrar("click",(event)=>{
+    window.location.href = "../src/index.html"
 })

@@ -39,7 +39,7 @@ export default class LoginRequest {
         })
         .catch(err => console.log(err))
         if(verificationLogin.message !== undefined){
-            console.log("E-mail ou senha invalido")
+            alert("E-mail ou senha invalido")
 
         }else{
             window.location.href = "./pages/dashBoard.html"
@@ -54,4 +54,8 @@ LoginRequest.btnLogin.addEventListener("click", (event)=>{
     event.preventDefault()
     LoginRequest.login()
    
+})
+const linkCadastro = document.querySelector("strong")
+linkCadastro.addEventListener("click", (event)=>{
+   console.log( window.location.href = "pages/model.cadastro.html")
 })
