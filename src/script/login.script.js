@@ -42,7 +42,7 @@ export default class LoginRequest {
             alert("E-mail ou senha invalido")
 
         }else{
-            window.location.href = "./pages/dashBoard.html"
+            window.location.href = "../../src/pages/dashBoard.html"
         }
         
     }
@@ -56,6 +56,6 @@ LoginRequest.btnLogin.addEventListener("click", (event)=>{
    
 })
 const linkCadastro = document.querySelector("strong")
-linkCadastro.addEventListener("click", (event)=>{
-   console.log( window.location.href = "pages/model.cadastro.html")
+linkCadastro.addEventListener("click", ()=>{
+   console.log( window.location.href = "../../src/pages/model.cadastro.html")
 })

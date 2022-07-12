@@ -71,6 +71,11 @@
     border-radius: 5px;
     background-color: #EDBC64;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.btn-login:hover{
+    background-color: #f4cd83;
+    
 }
 .texto-login{
     text-align: center;

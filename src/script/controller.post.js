@@ -259,9 +259,8 @@ Post.renderizaPerfil()
 Post.btnAdicionar.addEventListener("click", Post.adicionarPost())
 
 const buttonLogout = document.querySelector(".button-logout")
-buttonLogout.addEventListener('click', (event)=>{
-    console.log(event.target)
-    window.location.href = "../../src/index.html"
+buttonLogout.addEventListener('click', ()=>{
+    window.location.href = "../../index.html"
     localStorage.clear()
 
 })

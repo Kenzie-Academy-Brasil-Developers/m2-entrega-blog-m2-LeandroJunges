@@ -98,8 +98,9 @@ Cadastro.btnCadastrar.addEventListener("click", (e) => {
     e.preventDefault()
     Cadastro.createUser()
 })
-const btnCloseCadastrar = document.querySelector(".btn-close-cadastro")
+// const btnCloseCadastrar = document.querySelector(".btn-close-cadastro")
 
-btnCloseCadastrar("click",(event)=>{
-    window.location.href = "../src/index.html"
-})
+// btnCloseCadastrar.addEventListener("click",()=>{
+//     console.log("oi")
+//     window.location.href = "../../index.html"
+// })

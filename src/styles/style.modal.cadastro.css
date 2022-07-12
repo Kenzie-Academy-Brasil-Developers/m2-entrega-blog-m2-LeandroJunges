@@ -42,6 +42,10 @@
     margin-bottom: 20px;
      */
 }
+.btn-close-cadastro a {
+    text-decoration: none;
+    color: #FFFFFF;
+}
 .nameUser{
     width: 246px;
     height: 42px;
@@ -98,4 +102,10 @@
     border-radius: 5px;
     background-color: #EDBC64;
     color: #FFFFFF;
+    cursor: pointer;
+}
+.btn-cadastrar:hover{
+    color: #FFFFFF;
+    background-color: #f4cd83;
+
 }
