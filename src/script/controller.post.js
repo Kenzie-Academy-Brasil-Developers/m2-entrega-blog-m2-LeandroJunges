@@ -233,6 +233,26 @@
             listaPost.append(divPost)
         });
     }
+    static async updatePost(id, contentUpdate){
+            return await fetch(`${base_url}/${id}`, {
+                    method: "PATCH",
+                    headers: this.headers,
+                    body: JSON.stringify(contentUpdate)
+                })
+                .then(res => res.json())
+                .catch(err => console.log(err))
+        
+    }
+    static async deletePost(id){
+                const base_url = "https://blog-m2.herokuapp.com/posts"
+        
+                return await fetch(`${base_url}/${id}`, {
+                    method: "DELETE",
+                    headers: this.headers
+                })
+                .then(res => res.json())
+                .catch(err => console.log(err))
+    }
 }
 Post.renderizaPost()
 Post.renderizaPerfil()
